@@ -1,0 +1,394 @@
+
+## 1. Swap Two Numbers Without Third Variable
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int a = 10, b = 20;
+
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+    }
+}
+```
+
+### Output
+
+```
+a = 20
+b = 10
+```
+
+---
+
+## 2. Check Prime Number
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        int n = 13;
+        boolean prime = true;
+
+        for(int i=2;i<=n/2;i++) {
+            if(n%i==0) {
+                prime=false;
+                break;
+            }
+        }
+
+        if(prime)
+            System.out.println("Prime");
+        else
+            System.out.println("Not Prime");
+    }
+}
+```
+
+### Output
+
+```
+Prime
+```
+
+---
+
+## 3. Factorial
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        int n=5,fact=1;
+
+        for(int i=1;i<=n;i++)
+            fact*=i;
+
+        System.out.println(fact);
+    }
+}
+```
+
+### Output
+
+```
+120
+```
+
+---
+
+## 4. Fibonacci Series
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        int a=0,b=1,c;
+
+        System.out.print(a+" "+b+" ");
+
+        for(int i=1;i<=8;i++) {
+            c=a+b;
+            System.out.print(c+" ");
+            a=b;
+            b=c;
+        }
+    }
+}
+```
+
+### Output
+
+```
+0 1 1 2 3 5 8 13 21 34
+```
+
+---
+
+## 5. Reverse Number
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        int n=1234,rev=0;
+
+        while(n!=0){
+            rev=rev*10+n%10;
+            n=n/10;
+        }
+
+        System.out.println(rev);
+    }
+}
+```
+
+### Output
+
+```
+4321
+```
+
+---
+
+## 6. Palindrome Number
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        int num=121,temp=num,rev=0;
+
+        while(num!=0){
+            rev=rev*10+num%10;
+            num/=10;
+        }
+
+        if(temp==rev)
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+```
+
+### Output
+
+```
+Palindrome
+```
+
+---
+
+## 7. Armstrong Number
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        int num=153,temp=num,sum=0;
+
+        while(num!=0){
+            int rem=num%10;
+            sum+=rem*rem*rem;
+            num/=10;
+        }
+
+        if(temp==sum)
+            System.out.println("Armstrong");
+    }
+}
+```
+
+### Output
+
+```
+Armstrong
+```
+
+---
+
+## 8. Reverse String
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        String str="Java";
+
+        for(int i=str.length()-1;i>=0;i--)
+            System.out.print(str.charAt(i));
+    }
+}
+```
+
+### Output
+
+```
+avaJ
+```
+
+---
+
+## 9. Check Palindrome String
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        String str="madam";
+        String rev="";
+
+        for(int i=str.length()-1;i>=0;i--)
+            rev+=str.charAt(i);
+
+        if(str.equals(rev))
+            System.out.println("Palindrome");
+    }
+}
+```
+
+### Output
+
+```
+Palindrome
+```
+
+---
+
+## 10. Count Vowels
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        String str="education";
+        int count=0;
+
+        for(char c:str.toCharArray()) {
+            if("aeiou".indexOf(c)!=-1)
+                count++;
+        }
+
+        System.out.println(count);
+    }
+}
+```
+
+### Output
+
+```
+5
+```
+
+---
+
+## 11. Largest Element in Array
+
+```java
+int arr[]={10,50,20,80,30};
+int max=arr[0];
+
+for(int i=1;i<arr.length;i++)
+    if(arr[i]>max)
+        max=arr[i];
+
+System.out.println(max);
+```
+
+### Output
+
+```
+80
+```
+
+---
+
+## 12. Smallest Element in Array
+
+### Output
+
+```
+10
+```
+
+---
+
+## 13. Sum of Array Elements
+
+### Output
+
+```
+190
+```
+
+---
+
+## 14. Bubble Sort
+
+### Output
+
+```
+10 20 30 40 50
+```
+
+---
+
+## 15. Binary Search
+
+### Output
+
+```
+Element Found
+```
+
+---
+
+## 16. Remove Duplicate Elements
+
+### Output
+
+```
+1 2 3 4
+```
+
+---
+
+## 17. HashMap Example
+
+### Output
+
+```
+{1=Java, 2=Python}
+```
+
+---
+
+## 18. ArrayList Example
+
+### Output
+
+```
+[Java, Python]
+```
+
+---
+
+## 19. Lambda Expression
+
+### Output
+
+```
+Hello Lambda
+```
+
+---
+
+## 20. Stream API
+
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Integer> list =
+                Arrays.asList(10,20,30,40);
+
+        list.stream()
+            .filter(x->x>20)
+            .forEach(System.out::println);
+    }
+}
+```
+
+### Output
+
+```
+30
+40
+```
