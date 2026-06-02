@@ -278,6 +278,30 @@ Animal Sound
 
 # 10. Method Overriding
 
+## Code
+
+```java
+class Animal {
+    void sound() {
+        System.out.println("Animal Sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog Sound");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.sound();
+    }
+}
+```
+
 ## Output
 
 ```text
@@ -287,6 +311,27 @@ Dog Sound
 ---
 
 # 11. Abstraction
+
+## Code
+
+```java
+abstract class Shape {
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Circle Drawn");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape s = new Circle();
+        s.draw();
+    }
+}
+```
 
 ## Output
 
@@ -298,6 +343,27 @@ Circle Drawn
 
 # 12. Interface
 
+## Code
+
+```java
+interface Printable {
+    void print();
+}
+
+class Test implements Printable {
+    public void print() {
+        System.out.println("Printing...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.print();
+    }
+}
+```
+
 ## Output
 
 ```text
@@ -307,6 +373,21 @@ Printing...
 ---
 
 # 13. Exception Handling
+
+## Code
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        try {
+            int a = 10 / 0;
+        } catch (Exception e) {
+            System.out.println("Exception Handled");
+        }
+    }
+}
+```
 
 ## Output
 
@@ -318,6 +399,21 @@ Exception Handled
 
 # 14. String Reverse Program
 
+## Code
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        String str = "Java";
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            System.out.print(str.charAt(i));
+        }
+    }
+}
+```
+
 ## Output
 
 ```text
@@ -327,6 +423,24 @@ avaJ
 ---
 
 # 15. ArrayList
+
+## Code
+
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        ArrayList<String> list = new ArrayList<>();
+
+        list.add("Java");
+        list.add("Python");
+
+        System.out.println(list);
+    }
+}
+```
 
 ## Output
 
@@ -338,6 +452,24 @@ avaJ
 
 # 16. HashSet
 
+## Code
+
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        HashSet<Integer> set = new HashSet<>();
+
+        set.add(10);
+        set.add(20);
+
+        System.out.println(set);
+    }
+}
+```
+
 ## Output
 
 ```text
@@ -347,6 +479,24 @@ avaJ
 ---
 
 # 17. HashMap
+
+## Code
+
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        HashMap<Integer, String> map = new HashMap<>();
+
+        map.put(1, "Java");
+        map.put(2, "Python");
+
+        System.out.println(map);
+    }
+}
+```
 
 ## Output
 
@@ -358,6 +508,23 @@ avaJ
 
 # 18. Lambda Expression (Java 8)
 
+## Code
+
+```java
+interface Demo {
+    void show();
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Demo d = () -> System.out.println("Lambda Expression");
+
+        d.show();
+    }
+}
+```
+
 ## Output
 
 ```text
@@ -367,6 +534,23 @@ Lambda Expression
 ---
 
 # 19. Stream API
+
+## Code
+
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Integer> list = Arrays.asList(10, 20, 30, 40);
+
+        list.stream()
+            .filter(x -> x > 20)
+            .forEach(System.out::println);
+    }
+}
+```
 
 ## Output
 
@@ -379,6 +563,26 @@ Lambda Expression
 
 # 20. Multithreading
 
+## Code
+
+```java
+class MyThread extends Thread {
+
+    public void run() {
+        System.out.println("Thread Running");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        MyThread t = new MyThread();
+
+        t.start();
+    }
+}
+```
+
 ## Output
 
 ```text
@@ -389,93 +593,29 @@ Thread Running
 
 # 21. File Handling
 
+## Code
+
+```java
+import java.io.FileWriter;
+
+public class Main {
+    public static void main(String[] args) {
+
+        try {
+            FileWriter fw = new FileWriter("test.txt");
+            fw.write("Hello Java");
+            fw.close();
+
+            System.out.println("File Created Successfully");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
 ## Output
 
 ```text
 File Created Successfully
 ```
-
----
-
-# 22. JDBC Connectivity
-
-Topics:
-
-* DriverManager
-* Connection
-* PreparedStatement
-* ResultSet
-
----
-
-# 23. Collections Framework
-
-Topics:
-
-* List
-* Set
-* Map
-* Queue
-* Iterator
-
----
-
-# 24. Java 8 Features
-
-Topics:
-
-* Lambda Expressions
-* Functional Interface
-* Method Reference
-* Stream API
-* Optional
-
----
-
-# 25. Advanced Java
-
-Topics:
-
-* JDBC
-* Servlet
-* JSP
-* Hibernate
-* Spring
-* Spring Boot
-* REST API
-
----
-
-# 26. Data Structures Using Java
-
-Topics:
-
-* Stack
-* Queue
-* Linked List
-* Tree
-* Graph
-* Heap
-
----
-
-# 27. Important Interview Programs
-
-* Palindrome Number
-* Fibonacci Series
-* Prime Number
-* Factorial
-* Armstrong Number
-* String Reverse
-* Anagram
-* Duplicate Elements
-* Bubble Sort
-* Binary Search
-
----
-
-## Author
-
-Pradnya Nisal
-
-Computer Engineering Graduate | Java Developer
