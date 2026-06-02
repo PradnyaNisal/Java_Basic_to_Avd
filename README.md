@@ -278,7 +278,11 @@ Animal Sound
 
 # 10. Method Overriding
 
-## Code
+## What is Method Overriding?
+
+Method Overriding occurs when a child class provides its own implementation of a method that already exists in the parent class.
+
+### Code
 
 ```java
 class Animal {
@@ -302,7 +306,14 @@ public class Main {
 }
 ```
 
-## Output
+### Explanation
+
+* `Animal` is the parent class.
+* `Dog` extends `Animal`.
+* The `sound()` method is redefined in `Dog`.
+* When `d.sound()` is called, Java executes the child class version.
+
+### Output
 
 ```text
 Dog Sound
@@ -312,7 +323,11 @@ Dog Sound
 
 # 11. Abstraction
 
-## Code
+## What is Abstraction?
+
+Abstraction hides implementation details and shows only essential functionality.
+
+### Code
 
 ```java
 abstract class Shape {
@@ -333,7 +348,14 @@ public class Main {
 }
 ```
 
-## Output
+### Explanation
+
+* `Shape` is an abstract class.
+* Abstract methods do not have a body.
+* `Circle` provides the implementation.
+* Object is created using parent reference.
+
+### Output
 
 ```text
 Circle Drawn
@@ -343,7 +365,11 @@ Circle Drawn
 
 # 12. Interface
 
-## Code
+## What is an Interface?
+
+An interface contains abstract methods that must be implemented by classes.
+
+### Code
 
 ```java
 interface Printable {
@@ -364,7 +390,13 @@ public class Main {
 }
 ```
 
-## Output
+### Explanation
+
+* `Printable` defines a contract.
+* `Test` implements the interface.
+* All interface methods must be implemented.
+
+### Output
 
 ```text
 Printing...
@@ -374,7 +406,11 @@ Printing...
 
 # 13. Exception Handling
 
-## Code
+## What is Exception Handling?
+
+Exception Handling prevents program termination when an error occurs.
+
+### Code
 
 ```java
 public class Main {
@@ -389,7 +425,13 @@ public class Main {
 }
 ```
 
-## Output
+### Explanation
+
+* Division by zero causes an exception.
+* `try` block contains risky code.
+* `catch` block handles the exception.
+
+### Output
 
 ```text
 Exception Handled
@@ -397,7 +439,7 @@ Exception Handled
 
 ---
 
-# 14. String Reverse Program
+# 14. String Reverse
 
 ## Code
 
@@ -407,14 +449,20 @@ public class Main {
 
         String str = "Java";
 
-        for (int i = str.length() - 1; i >= 0; i--) {
+        for(int i = str.length()-1; i >= 0; i--) {
             System.out.print(str.charAt(i));
         }
     }
 }
 ```
 
-## Output
+### Explanation
+
+* `length()` returns string length.
+* `charAt()` accesses characters.
+* Loop starts from last character and moves backward.
+
+### Output
 
 ```text
 avaJ
@@ -424,7 +472,11 @@ avaJ
 
 # 15. ArrayList
 
-## Code
+## What is ArrayList?
+
+ArrayList is a dynamic array that can grow automatically.
+
+### Code
 
 ```java
 import java.util.*;
@@ -442,7 +494,13 @@ public class Main {
 }
 ```
 
-## Output
+### Explanation
+
+* `add()` inserts elements.
+* ArrayList maintains insertion order.
+* Duplicate values are allowed.
+
+### Output
 
 ```text
 [Java, Python]
@@ -452,7 +510,11 @@ public class Main {
 
 # 16. HashSet
 
-## Code
+## What is HashSet?
+
+HashSet stores unique values.
+
+### Code
 
 ```java
 import java.util.*;
@@ -464,13 +526,20 @@ public class Main {
 
         set.add(10);
         set.add(20);
+        set.add(10);
 
         System.out.println(set);
     }
 }
 ```
 
-## Output
+### Explanation
+
+* Duplicate values are not allowed.
+* HashSet stores only unique elements.
+* Order is not guaranteed.
+
+### Output
 
 ```text
 [10, 20]
@@ -480,7 +549,11 @@ public class Main {
 
 # 17. HashMap
 
-## Code
+## What is HashMap?
+
+HashMap stores data as key-value pairs.
+
+### Code
 
 ```java
 import java.util.*;
@@ -488,17 +561,23 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        HashMap<Integer, String> map = new HashMap<>();
+        HashMap<Integer,String> map = new HashMap<>();
 
-        map.put(1, "Java");
-        map.put(2, "Python");
+        map.put(1,"Java");
+        map.put(2,"Python");
 
         System.out.println(map);
     }
 }
 ```
 
-## Output
+### Explanation
+
+* `put()` inserts key-value pairs.
+* Keys must be unique.
+* Values can be duplicated.
+
+### Output
 
 ```text
 {1=Java, 2=Python}
@@ -506,9 +585,13 @@ public class Main {
 
 ---
 
-# 18. Lambda Expression (Java 8)
+# 18. Lambda Expression
 
-## Code
+## What is Lambda Expression?
+
+Lambda expressions provide a shorter way to write anonymous functions.
+
+### Code
 
 ```java
 interface Demo {
@@ -525,7 +608,13 @@ public class Main {
 }
 ```
 
-## Output
+### Explanation
+
+* Introduced in Java 8.
+* Reduces boilerplate code.
+* Works with Functional Interfaces.
+
+### Output
 
 ```text
 Lambda Expression
@@ -535,7 +624,11 @@ Lambda Expression
 
 # 19. Stream API
 
-## Code
+## What is Stream API?
+
+Stream API processes collections efficiently.
+
+### Code
 
 ```java
 import java.util.*;
@@ -543,7 +636,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        List<Integer> list = Arrays.asList(10, 20, 30, 40);
+        List<Integer> list = Arrays.asList(10,20,30,40);
 
         list.stream()
             .filter(x -> x > 20)
@@ -552,7 +645,13 @@ public class Main {
 }
 ```
 
-## Output
+### Explanation
+
+* `stream()` creates a stream.
+* `filter()` selects matching elements.
+* `forEach()` prints elements.
+
+### Output
 
 ```text
 30
@@ -563,7 +662,11 @@ public class Main {
 
 # 20. Multithreading
 
-## Code
+## What is Multithreading?
+
+Multithreading allows multiple tasks to run simultaneously.
+
+### Code
 
 ```java
 class MyThread extends Thread {
@@ -583,7 +686,13 @@ public class Main {
 }
 ```
 
-## Output
+### Explanation
+
+* `Thread` class is extended.
+* `run()` contains thread logic.
+* `start()` creates a new thread and calls `run()`.
+
+### Output
 
 ```text
 Thread Running
@@ -593,7 +702,11 @@ Thread Running
 
 # 21. File Handling
 
-## Code
+## What is File Handling?
+
+File Handling is used to create, read, write, and update files.
+
+### Code
 
 ```java
 import java.io.FileWriter;
@@ -603,18 +716,26 @@ public class Main {
 
         try {
             FileWriter fw = new FileWriter("test.txt");
+
             fw.write("Hello Java");
+
             fw.close();
 
             System.out.println("File Created Successfully");
-        } catch (Exception e) {
+        } catch(Exception e) {
             e.printStackTrace();
         }
     }
 }
 ```
 
-## Output
+### Explanation
+
+* `FileWriter` writes data to a file.
+* `write()` inserts content.
+* `close()` saves and closes the file.
+
+### Output
 
 ```text
 File Created Successfully
